@@ -1,0 +1,179 @@
+@charset "UTF-8";
+div.aaa {
+	margin-top : 200px;
+}
+div.bbb{
+	margin : 20px auto;
+	width : 80%;
+	height : 130px;
+	border-top : 2px solid black;
+    box-shadow: 0px 0px 10px 0px gray;
+}
+div.b_name{
+	text-align : center;
+	width : 28%;
+	height : 100px;
+	float : left;
+}
+div.ch{
+	width : 8%;
+	height : 100px;
+	float : left;
+}
+input#search{
+	width : 150%;
+	height : 82%;
+	background-color : black;
+	color: white;
+  	padding: 2em 3em;
+	border: none;
+	transition: all .3s ease;
+	border-radius: 15px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	outline: none;
+	align-self: center;
+	cursor: pointer;
+	font-weight: 900;
+}
+input#search:hover{
+	transform: translateY(-5px);
+	background-color : lightgray;
+}
+div#left_window{
+	margin : -30px 0px 0px 90px; 
+	float : left;
+}
+div#left_window img{
+	width : 100px;
+}
+div#right_window{
+	margin : -32px -100px 0px 0px; 
+	float : right;
+}
+div#right_window img{
+	width : 100px;
+}
+
+
+select#b_name{
+	text-align-last: center;
+	width : 80%;
+	-moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #444;
+    background-color: #fff;
+    padding: .6em 1.4em .5em .8em;
+    margin: 0;
+    border: 2px solid #aaa;
+    border-radius: .5em;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    background: url(/views/img1/etc/돋보기.PNG) no-repeat;
+    background-size : 10%;
+    background-position : right center;
+}
+
+
+select#b_name:hover {
+    border-color: #888;
+    
+}
+select#b_name:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+select#b_name:disabled {
+    opacity: 0.5;
+}
+option{
+	text-align : center;	
+}
+
+div.indate_outdate{
+	width : 25%;
+	border : 1px solid black;	
+}
+input#inDate,input#outDate{
+	size : 50px;
+	text-align : center;
+	width : 50%;
+	-moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #444;
+    background-color: #fff;
+    padding: .6em 1.4em .5em .8em;
+    margin: 0;
+    border: 2px solid #aaa;
+    border-radius: .5em;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    background: url(/views/img1/etc/cal.PNG) no-repeat;
+    background-size : 15%;
+    background-position : right center;
+}
+input#inDate:hover,input#outDate:hover{
+    border-color: #888;
+}
+input#inDate:focus,input#outDate:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+}
+input#inDate:disabled ,input#outDate:disabled {
+    opacity: 0.5;
+}
+div.ccc{
+	margin : 20px auto;
+	width : 80%;
+}
+h1#h1{
+	text-align : center;
+	font-size : 40px;
+}
+h3#h3{
+	text-align : center;
+	color : gray;	
+	font-size : 20px;
+}
+div.content{
+	position: relative;
+	margin : 20px auto;
+	padding : 20px 30px;
+	width : 50%;
+	border : 1px solid lightgray;
+}
+img#reservation_roof{
+	position: absolute;
+	width : 20%;
+	height : 80px;
+	margin : -90px 0px 0px 600px;
+}
+p.big{
+	font-size : 25px;
+	font-weight: 700;
+
+}
+div.content h3{
+	font-size : 30px;
+	text-align : center;
+}
+div.footer{
+	width : 100%;
+	float : left;
+}
+.ui-datepicker-calendar > tbody td.ui-datepicker-week-end:first-child a { color: red; }
+.ui-datepicker-calendar > tbody td.ui-datepicker-week-end:last-child a { color: blue; }
+
+

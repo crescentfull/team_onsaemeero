@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="aaa.db.salesMapp" >
+
+		<select id="salesList"  parameterType="reservationVO" resultType="reservationVO"> 
+		select * from reservation 
+		<where> 
+		<![CDATA[ DATE_FORMAT(indate,'%Y') = #{indate} and indate < now() ]]>
+		</where>
+		order by indate;
+	</select>
+	
+	<select id="salesYListSu"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d, '%Y')as firdate,d.d, ifnull(r.b_name,'온새미로-서울') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-서울' 
+		where DATE_FORMAT(d.d,'%Y') between #{year1} and #{year2} and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y')as firdate,d.d, ifnull(c.b_name,'온새미로-서울') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-서울'  
+		where DATE_FORMAT(d.d,'%Y') between #{year1} and #{year2} and d.d <= curdate()
+		group by firdate
+		)as z group by d;
+		]]>
+	</select>
+	
+	<select id="salesYListGr"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d, '%Y')as firdate,d.d, ifnull(r.b_name,'온새미로-강릉') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-강릉' 
+		where DATE_FORMAT(d.d,'%Y') between #{year1} and #{year2} and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y')as firdate,d.d, ifnull(c.b_name,'온새미로-강릉') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-강릉'  
+		where DATE_FORMAT(d.d,'%Y') between #{year1} and #{year2} and d.d <= curdate()
+		group by firdate
+		)as z group by d;
+		]]>
+	</select>
+	
+	<select id="salesYListJj"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d, '%Y')as firdate,d.d, ifnull(r.b_name,'온새미로-전주') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-전주' 
+		where DATE_FORMAT(d.d,'%Y') between #{year1} and #{year2} and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y')as firdate,d.d, ifnull(c.b_name,'온새미로-전주') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-전주'  
+		where DATE_FORMAT(d.d,'%Y') between #{year1} and #{year2} and d.d <= curdate()
+		group by firdate
+		)as z group by d;
+		]]>
+	</select>
+	
+	<select id="salesYListGj"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d, '%Y')as firdate,d.d, ifnull(r.b_name,'온새미로-경주') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-경주' 
+		where DATE_FORMAT(d.d,'%Y') between #{year1} and #{year2} and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y')as firdate,d.d, ifnull(c.b_name,'온새미로-경주') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-경주'  
+		where DATE_FORMAT(d.d,'%Y') between #{year1} and #{year2} and d.d <= curdate()
+		group by firdate
+		)as z group by d;
+		]]>
+	</select>
+	
+	<select id="salesMListSu"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d,'%Y-%m')as firdate,d.d, ifnull(r.b_name,'온새미로-서울') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-서울' 
+		where DATE_FORMAT(d.d,'%Y-%m') 
+		between concat('${year1}','-','${month1}') and concat('${year2}','-','${month2}')  and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y-%m')as firdate,d.d, ifnull(c.b_name,'온새미로-서울') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-서울'  
+		where DATE_FORMAT(d.d,'%Y-%m')
+		between concat('${year1}','-','${month1}') and concat('${year2}','-','${month2}')  and d.d <= curdate()
+		group by firdate
+		)as z group by d
+		]]>
+	</select>
+	
+	
+	<select id="salesMListGr"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d,'%Y-%m')as firdate,d.d, ifnull(r.b_name,'온새미로-강릉') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-강릉' 
+		where DATE_FORMAT(d.d,'%Y-%m') 
+		between concat('${year1}','-','${month1}') and concat('${year2}','-','${month2}')  and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y-%m')as firdate,d.d, ifnull(c.b_name,'온새미로-강릉') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-강릉'  
+		where DATE_FORMAT(d.d,'%Y-%m') 
+		between concat('${year1}','-','${month1}') and concat('${year2}','-','${month2}')  and d.d <= curdate()
+		group by firdate
+		)as z group by d
+		]]>
+	</select>
+	
+	<select id="salesMListJj"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d,'%Y-%m')as firdate,d.d, ifnull(r.b_name,'온새미로-전주') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-전주' 
+		where DATE_FORMAT(d.d,'%Y-%m')
+		between concat('${year1}','-','${month1}') and concat('${year2}','-','${month2}')  and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y-%m')as firdate,d.d, ifnull(c.b_name,'온새미로-전주') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-전주'  
+		where DATE_FORMAT(d.d,'%Y-%m') 
+		between concat('${year1}','-','${month1}') and concat('${year2}','-','${month2}')  and d.d <= curdate()
+		group by firdate
+		)as z group by d
+		]]>
+	</select>
+	
+	<select id="salesMListGj"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d,'%Y-%m')as firdate,d.d, ifnull(r.b_name,'온새미로-경주') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-경주' 
+		where DATE_FORMAT(d.d,'%Y-%m')
+		between concat('${year1}','-','${month1}') and concat('${year2}','-','${month2}')  and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y-%m')as firdate,d.d, ifnull(c.b_name,'온새미로-경주') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-경주'  
+		where DATE_FORMAT(d.d,'%Y-%m') 
+		between concat('${year1}','-','${month1}') and concat('${year2}','-','${month2}')  and d.d <= curdate()
+		group by firdate
+		)
+		as z group by d
+		]]>
+	</select>
+	
+	<select id="salesDListSu"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d, '%Y-%m-%d')as firdate,d.d, ifnull(r.b_name,'온새미로-서울') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-서울' 
+		where DATE_FORMAT(d.d,'%Y-%m-%d') between #{date1} and #{date2} and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y-%m-%d')as firdate,d.d, ifnull(c.b_name,'온새미로-서울') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-서울'  
+		where DATE_FORMAT(d.d,'%Y-%m-%d') between #{date1} and #{date2} and d.d <= curdate()
+		group by firdate
+		)as z group by d;
+		]]>
+	</select>
+	
+	
+	<select id="salesDListGr"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d, '%Y-%m-%d')as firdate,d.d, ifnull(r.b_name,'온새미로-강릉') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-강릉' 
+		where DATE_FORMAT(d.d,'%Y-%m-%d') between #{date1} and #{date2} and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y-%m-%d')as firdate,d.d, ifnull(c.b_name,'온새미로-강릉') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-강릉'  
+		where DATE_FORMAT(d.d,'%Y-%m-%d') between #{date1} and #{date2} and d.d <= curdate()
+		group by firdate
+		)as z group by d;
+		]]>
+	</select>
+	
+	<select id="salesDListJj"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d, '%Y-%m-%d')as firdate,d.d, ifnull(r.b_name,'온새미로-전주') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-전주' 
+		where DATE_FORMAT(d.d,'%Y-%m-%d') between #{date1} and #{date2} and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y-%m-%d')as firdate,d.d, ifnull(c.b_name,'온새미로-전주') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-전주'  
+		where DATE_FORMAT(d.d,'%Y-%m-%d') between #{date1} and #{date2} and d.d <= curdate()
+		group by firdate
+		)as z group by d;
+		]]>
+	</select>
+	
+	<select id="salesDListGj"  parameterType="aaa.time.Ymd" resultType="reservationVO"> 
+		<![CDATA[ 
+		select firdate, b_name, ifnull(sum(price),0) as price from
+		(
+		select date_format(d.d, '%Y-%m-%d')as firdate,d.d, ifnull(r.b_name,'온새미로-경주') as b_name , sum(r.price) as price   from date_t d 
+		left join reservation r on  d.d =r.indate  and r.b_name = '온새미로-경주' 
+		where DATE_FORMAT(d.d,'%Y-%m-%d') between #{date1} and #{date2} and d.d <= curdate()
+		group by firdate
+		
+		UNION ALL 
+		
+		select date_format(d.d, '%Y-%m-%d')as firdate,d.d, ifnull(c.b_name,'온새미로-경주') as b_name , sum(c.net) as price  from date_t d 
+		left join cancel c on  d.d = c.canceldate  and c.b_name = '온새미로-경주'  
+		where DATE_FORMAT(d.d,'%Y-%m-%d') between #{date1} and #{date2} and d.d <= curdate()
+		group by firdate
+		)as z group by d;
+		]]>
+	</select>
+	
+	<select id="month" parameterType="branchVo" resultType="branchVo">
+		select distinct ifnull((select sum(price) from reservation where date_format(indate, '%Y-%m') = #{date}  and b_name='온새미로-서울' and now()>=indate),0) su, 
+			ifnull((select sum(price) from reservation where date_format(indate, '%Y-%m') =#{date} and b_name='온새미로-강릉' and now()>=indate),0) gr,
+			ifnull((select sum(price) from reservation where date_format(indate, '%Y-%m') =#{date} and b_name='온새미로-경주' and now()>=indate),0) kj,
+			ifnull((select sum(price) from reservation where date_format(indate, '%Y-%m') =#{date} and b_name='온새미로-전주' and now()>=indate),0) jj from reservation;
+	</select>
+	
+	<select id="monthCancel" parameterType="String" resultType="branchVo">
+		select distinct ifnull((select sum(net) from cancel where date_format(canceldate, '%Y-%m') = #{date}  and b_name='온새미로-서울'),0) su, 
+		ifnull((select sum(net) from cancel where date_format(canceldate, '%Y-%m') =#{date} and b_name='온새미로-강릉'),0) gr,
+		ifnull((select sum(net) from cancel where date_format(canceldate, '%Y-%m') =#{date} and b_name='온새미로-경주'),0) kj,
+		ifnull((select sum(net) from cancel where date_format(canceldate, '%Y-%m') =#{date} and b_name='온새미로-전주'),0) jj from reservation;
+	</select>
+	
+	<select id="year" parameterType="branchVo" resultType="branchVo">
+		select distinct ifnull((select sum(price) from reservation where date_format(indate, '%Y') = #{date}  and b_name='온새미로-서울' and now()>=indate),0) su, 
+			ifnull((select sum(price) from reservation where date_format(indate, '%Y') =#{date} and b_name='온새미로-강릉' and now()>=indate),0) gr,
+			ifnull((select sum(price) from reservation where date_format(indate, '%Y') =#{date} and b_name='온새미로-경주' and now()>=indate),0) kj,
+			ifnull((select sum(price) from reservation where date_format(indate, '%Y') =#{date} and b_name='온새미로-전주' and now()>=indate),0) jj from reservation;
+	</select>
+	
+	<select id="yearCancel" parameterType="String" resultType="branchVo">
+		select distinct ifnull((select sum(net) from cancel where date_format(canceldate, '%Y') = #{date}  and b_name='온새미로-서울'),0) su, 
+		ifnull((select sum(net) from cancel where date_format(canceldate, '%Y') =#{date} and b_name='온새미로-강릉'),0) gr,
+		ifnull((select sum(net) from cancel where date_format(canceldate, '%Y') =#{date} and b_name='온새미로-경주'),0) kj,
+		ifnull((select sum(net) from cancel where date_format(canceldate, '%Y') =#{date} and b_name='온새미로-전주'),0) jj from reservation;
+	</select>
+	
+	<select id="day" parameterType="branchVo" resultType="branchVo">
+		select distinct ifnull((select sum(price) from reservation where date_format(indate, '%Y-%m-%d') = #{date} and b_name='온새미로-서울'),0) su, 
+			ifnull((select sum(price) from reservation where date_format(indate, '%Y-%m-%d') = #{date} and b_name='온새미로-강릉'),0) gr,
+			ifnull((select sum(price) from reservation where date_format(indate, '%Y-%m-%d') = #{date} and b_name='온새미로-경주'),0) kj,
+			ifnull((select sum(price) from reservation where date_format(indate, '%Y-%m-%d') = #{date} and b_name='온새미로-전주'),0) jj from reservation;
+	</select>
+	
+	<select id="dayCancel" parameterType="String" resultType="branchVo">
+		select distinct ifnull((select sum(net) from cancel where date_format(canceldate, '%Y-%m-%d') = #{date}  and b_name='온새미로-서울'),0) su, 
+			ifnull((select sum(net) from cancel where date_format(canceldate, '%Y-%m-%d') =#{date} and b_name='온새미로-강릉'),0) gr,
+			ifnull((select sum(net) from cancel where date_format(canceldate, '%Y-%m-%d') =#{date} and b_name='온새미로-경주'),0) kj,
+			ifnull((select sum(net) from cancel where date_format(canceldate, '%Y-%m-%d') =#{date} and b_name='온새미로-전주'),0) jj from reservation;
+	</select>
+</mapper>

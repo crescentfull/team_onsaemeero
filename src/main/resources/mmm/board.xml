@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org?DTD Mapper3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="aaa.db.BoardMapp">
+
+<!-- 게시판 목록 -->
+	<select id="bblist" resultType="aaa.vo.BoardVO">
+		select * from board 
+		<!-- <where>title like concat('%',#{search}, '%' )</where> --> 
+		<where>
+			 <if test="sort != null">
+				<if test="sort == 'title'.toString()">
+					and title like '%${search}%'
+				</if>
+				<if test="sort == 'content'.toString()">
+					and content like '%${search}%'
+				</if>
+				<if test="sort == 'pname'.toString()">
+					and pname like '%${search}%'
+				</if>
+				<if test="sort == 'all'.toString()">
+					and (title like '%${search}%'
+						or content like '%${search}%'
+						or pname like '%${search}%')
+				</if>
+			</if>
+		</where>
+		order by no desc
+	</select>
+	
+	<select id="noticelist" resultType="aaa.vo.BoardVO">
+		select * from board 
+		<!-- <where>title like concat('%',#{search}, '%' )</where> --> 
+		<where>
+		
+		kind = 'notice'
+			 <if test="sort != null">
+				<if test="sort == 'title'.toString()">
+					and title like '%${search}%'
+				</if>
+				<if test="sort == 'content'.toString()">
+					and content like '%${search}%'
+				</if>
+				<if test="sort == 'all'.toString()">
+					and (title like '%${search}%'
+						or content like '%${search}%'
+						or pname like '%${search}%')
+				</if>
+			</if>
+		</where>
+		order by no desc limit #{start}, #{limit}
+	</select>
+	
+	<select id="faqlist" resultType="aaa.vo.BoardVO">
+		select * from board 
+		<!-- <where>title like concat('%',#{search}, '%' )</where> --> 
+		<where>
+		kind = 'faq'
+			 <if test="sort != null">
+				<if test="sort == 'title'.toString()">
+					and title like '%${search}%'
+				</if>
+				<if test="sort == 'content'.toString()">
+					and content like '%${search}%'
+				</if>
+				<if test="sort == 'pname'.toString()">
+					and pname like '%${search}%'
+				</if>
+				<if test="sort == 'all'.toString()">
+					and (title like '%${search}%'
+						or content like '%${search}%'
+						or pname like '%${search}%')
+				</if>
+			</if>
+		</where>
+		order by no desc limit #{start}, #{limit}
+	</select>
+	
+	<select id="qnalist" resultType="aaa.vo.BoardVO">
+		select * from board 
+		<!-- <where>title like concat('%',#{search}, '%' )</where> --> 
+		<where>
+		kind = 'qna'
+			 <if test="sort != null">
+				<if test="sort == 'title'.toString()">
+					and title like '%${search}%'
+				</if>
+				<if test="sort == 'category'.toString()">
+					and category like '%${search}%'
+				</if>
+				<if test="sort == 'content'.toString()">
+					and content like '%${search}%'
+				</if>
+				<if test="sort == 'pname'.toString()">
+					and pname like '%${search}%'
+				</if>
+				<if test="sort == 'all'.toString()">
+					and (title like '%${search}%'
+						or content like '%${search}%'
+						or pname like '%${search}%')
+				</if>
+			</if>
+		</where>
+		order by no desc limit #{start}, #{limit}
+	</select>
+
+	
+	
+	<select id="adminlist" resultType="aaa.vo.BoardVO">
+		select * from board 
+		<!-- <where>title like concat('%',#{search}, '%' )</where> --> 
+		<where>
+		kind = 'adminNotice'
+			 <if test="sort != null">
+				<if test="sort == 'title'.toString()">
+					and title like '%${search}%'
+				</if>
+				<if test="sort == 'content'.toString()">
+					and content like '%${search}%'
+				</if>
+				<if test="sort == 'pname'.toString()">
+					and pname like '%${search}%'
+				</if>
+				<if test="sort == 'all'.toString()">
+					and (title like '%${search}%'
+						or content like '%${search}%'
+						or pname like '%${search}%')
+				</if>
+			</if>
+		</where>
+		order by no desc limit #{start}, #{limit}
+	</select>
+	
+	<select id="reviewlist" resultType="aaa.vo.BoardVO">
+		select * from board 
+		<!-- <where>title like concat('%',#{search}, '%' )</where> --> 
+		<where>
+		kind = 'review'
+			 <if test="sort != null">
+				<if test="sort == 'title'.toString()">
+					and title like '%${search}%'
+				</if>
+				<if test="sort == 'category'.toString()">
+					and category like '%${search}%'
+				</if>
+				<if test="sort == 'content'.toString()">
+					and content like '%${search}%'
+				</if>
+				<if test="sort == 'pname'.toString()">
+					and pname like '%${search}%'
+				</if>
+				<if test="sort == 'all'.toString()">
+					and (title like '%${search}%'
+						or content like '%${search}%'
+						or pname like '%${search}%')
+				</if>
+			</if>
+		</where>
+		order by no desc limit #{start}, #{limit}
+	</select>
+	
+	<select id="qna_Total" resultType="Integer">
+		select count(*) from board
+		<where>
+		kind = 'qna'
+			 <if test="sort != null">
+				<if test="sort == 'title'.toString()">
+					and title like '%${search}%'
+				</if>
+				<if test="sort == 'category'.toString()">
+					and category like '%${search}%'
+				</if>
+				<if test="sort == 'content'.toString()">
+					and content like '%${search}%'
+				</if>
+				<if test="sort == 'pname'.toString()">
+					and pname like '%${search}%'
+				</if>
+				<if test="sort == 'all'.toString()">
+					and (title like '%${search}%'
+						or content like '%${search}%'
+						or pname like '%${search}%')
+				</if>
+			</if>
+		</where>
+	</select>
+	
+	<select id="adminNotice_Total" resultType="Integer">
+		select count(*) from board
+		<where>
+		kind = 'adminNotice'
+			 <if test="sort != null">
+				<if test="sort == 'title'.toString()">
+					and title like '%${search}%'
+				</if>
+				<if test="sort == 'content'.toString()">
+					and content like '%${search}%'
+				</if>
+				<if test="sort == 'pname'.toString()">
+					and pname like '%${search}%'
+				</if>
+				<if test="sort == 'all'.toString()">
+					and (title like '%${search}%'
+						or content like '%${search}%'
+						or pname like '%${search}%')
+				</if>
+			</if>
+		</where>
+	</select>
+	
+	<select id="notice_Total" resultType="Integer">
+		select count(*) from board where kind = 'notice'
+		
+		<if test="sort != null">
+				<if test="sort == 'title'.toString()">
+					and title like '%${search}%'
+				</if>
+				<if test="sort == 'content'.toString()">
+					and content like '%${search}%'
+				</if>
+				<if test="sort == 'all'.toString()">
+					and (title like '%${search}%'
+						or content like '%${search}%'
+						or pname like '%${search}%')
+				</if>
+			</if>
+		
+		
+	</select>
+	
+	<select id="review_Total" resultType="Integer">
+		select count(*) from board
+		<where>
+		kind = 'review'
+			 <if test="sort != null">
+				<if test="sort == 'title'.toString()">
+					and title like '%${search}%'
+				</if>
+				<if test="sort == 'category'.toString()">
+					and category like '%${search}%'
+				</if>
+				<if test="sort == 'content'.toString()">
+					and content like '%${search}%'
+				</if>
+				<if test="sort == 'pname'.toString()">
+					and pname like '%${search}%'
+				</if>
+				<if test="sort == 'all'.toString()">
+					and (title like '%${search}%'
+						or content like '%${search}%'
+						or pname like '%${search}%')
+				</if>
+			</if>
+		</where>
+	</select>
+	
+	<select id="faq_Total" resultType="Integer">
+		select count(*) from board
+		<where>
+		kind = 'faq'
+			 <if test="sort != null">
+				<if test="sort == 'title'.toString()">
+					and title like '%${search}%'
+				</if>
+				<if test="sort == 'content'.toString()">
+					and content like '%${search}%'
+				</if>
+				<if test="sort == 'pname'.toString()">
+					and pname like '%${search}%'
+				</if>
+				<if test="sort == 'all'.toString()">
+					and (title like '%${search}%'
+						or content like '%${search}%'
+						or pname like '%${search}%')
+				</if>
+			</if>
+		</where>
+	</select>
+	
+	<select id="reviewlistsu" resultType="boardVO" parameterType="boardVO">
+		select * from board where category = '온새미로-서울' and kind = 'review' order by no desc limit #{start}, #{limit}
+	</select>
+	<select id="reviewlistsu_total" resultType="Integer" >
+		select count(*) from board where category = '온새미로-서울' and kind = 'review' order by no desc
+	</select>
+	
+	<select id="reviewlistjj" resultType="boardVO" parameterType="boardVO">
+		select * from board where category = '온새미로-전주' and kind = 'review' order by no desc limit #{start}, #{limit}
+	</select>
+	<select id="reviewlistjj_total" resultType="Integer">
+		select count(*) from board where category = '온새미로-전주' and kind = 'review' order by no desc
+	</select>
+	
+	<select id="reviewlistgr" resultType="boardVO" parameterType="boardVO">
+		select * from board where category = '온새미로-강릉' and kind = 'review' order by no desc limit #{start}, #{limit}
+	</select>
+	<select id="reviewlistgr_total" resultType="Integer" >
+		select count(*) from board where category = '온새미로-강릉' and kind = 'review' order by no desc
+	</select>
+	
+	<select id="reviewlistkj" resultType="boardVO" parameterType="boardVO"> 
+		select * from board where category = '온새미로-경주' and kind = 'review' order by no desc limit #{start}, #{limit}
+	</select>
+	<select id="reviewlistkj_total" resultType="Integer">
+		select count(*) from board where category = '온새미로-경주' and kind = 'review' order by no desc
+	</select>
+	 
+<!-- 게시판 목록 끝-->
+
+	
+	<select id="bbDetail" resultType="boardVO" parameterType="boardVO">
+	
+		select * from board where no = #{no}
+	 
+	</select>
+	
+	
+	<insert id="bbInsert" parameterType="boardVO">
+		insert into board (kind, title,   pname, reg_date, content, id, pw , reply,cnt, category) values
+						(#{kind},#{title},#{pname},now(),#{content},#{id},#{pw}, '-',0, #{category})
+	
+	</insert>
+	<insert id="replyInsert" parameterType="boardVO">
+		insert into board (kind, title,   pname, reg_date, content, id, pw , reply,cnt, category) values
+						(#{kind},#{title},#{pname},now(),#{content},#{id},#{pw}, '미답변',0, #{category})
+	
+	</insert>
+
+	<update id="bbModify" parameterType="boardVO">
+		update board set title = #{title}, pname = #{pname}, content=#{content}, modify_date = now() where no = #{no}
+	
+	</update>
+	
+	<delete id="bbDelete" parameterType="boardVO">
+		delete from board where no = #{no}
+	
+	</delete>
+	
+	<update id="addCount" parameterType="boardVO">
+		update board set cnt = cnt +1 where no = #{no}
+	</update>
+	
+	<!-- 답변 -->
+	
+	<insert id="brInsert"  parameterType="boardVO">
+		insert into board (kind, title,   pname, reg_date, content, id, pw ,  gno) values
+						  (#{kinds},#{title},#{pname},now(),#{content},#{id},#{pw}, #{gno})
+	</insert>
+	<update id="brInsert2"  parameterType="boardVO">
+		 update board set level = #{gno}, reply = '완료' where no = #{no}
+	</update>
+	
+	<update id="brInsert3" parameterType="boardVO">
+		 update board set reply = '미답변' where no = #{gno} 
+	</update>
+	
+	<select id="brDetail" resultType="boardVO" parameterType="boardVO">
+		select * from board where gno = #{no}
+	</select>
+	
+
+	<select id="qnalist2" parameterType="userVo" resultType="boardVO">
+		select * from board where id=#{id} and kind = 'qna' order by no desc limit #{start2}, #{limit2}
+	</select>
+	<select id="qnalist2_total"  parameterType="userVo" resultType="Integer">
+		select count(*) from board where id=#{id} and kind = 'qna' order by no desc 
+	</select>
+		
+	<select id="qnalist3" parameterType="userVo" resultType="boardVO">
+		select * from board where category = #{name} and kind = 'qna' order by no desc limit #{start3}, #{limit3}
+	</select>
+	
+	<select id="qnalist3_total"  parameterType="userVo" resultType="Integer">
+		select count(*) from board where category = #{name} and kind = 'qna' order by no desc 
+	</select>
+</mapper>

@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+
+h1#h1{
+	margin : 0;
+	text-align : center;
+}
+div#img1{
+	margin : 30px auto 0px auto;
+	width : 10%;
+}
+
+img.img11{
+	padding : -20px 0px;
+	width : 100%;
+	height : 100%;
+}
+div#cardInfo{
+	text-align : center;
+	margin : 30px auto;
+	width : 60%;
+	border :1px solid lightgray;
+	border-top : 3px solid black;
+}
+table {
+	font-weight: 500;
+	padding : 0px 0px 20px 0px;
+}
+td#td1{
+	width : 30%;
+}
+input#cardno {
+	margin : 5px 10px 5px 10px;
+	width : 84px;
+	height : 28px;
+	font-weight: 800;
+}
+h3{
+	padding : 0px 30px;
+	text-align : left;
+}
+
+select#select1 {
+	font-weight: 800;
+	margin : 5px 10px;
+	float : left;
+	width : 430px;
+	height : 35px;
+	color : gray;
+}
+select#select2 {
+	font-weight: 800;
+	margin : 5px 10px;
+	float : left;
+	width : 205px;
+	height : 35px;
+	color : gray;
+}
+p#ppp{
+	margin : 30px 70px;
+	text-align : left;
+	color : gray;
+	font-size : 12px;
+}
+div#rule1{
+	margin : 30px auto;
+	width : 60%;
+	border :1px solid lightgray;
+	border-top : 3px solid black;
+	
+}
+div#rule1-1{
+	margin : 0px 50px;
+}
+div#rule2-1{
+	margin : 0px 50px;
+}
+div#rule2{
+	margin : 30px auto;
+	width : 60%;
+	border :1px solid lightgray;
+	border-top : 3px solid black;
+}
+span{
+	font-weight: 800;
+	color : red;
+}
+div#ruleCheck{
+	margin : 30px auto;
+	width : 60%;
+	text-align : right;
+}
+
+div#bt{
+	margin : 20px auto;
+	width : 60%;
+	text-align : right;
+}
+input#back{
+	color : white;
+	width : 10%;
+	height : 50px;
+	font-size : 20px;
+	border : none;
+	background-color : black;
+	box-shadow: 0px 0px 10px 0px gray;
+	font-weight: 900;
+}
+input#rvt{
+	margin : 0px 0px 0px 20px;
+	color : white;
+	width : 30%;
+	height : 50px;
+	font-size : 20px;
+	border : none;
+	background-color : black;
+	box-shadow: 0px 0px 10px 0px gray;
+	font-weight: 900;
+}

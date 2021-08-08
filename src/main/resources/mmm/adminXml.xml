@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="aaa.db.adminMapp" >
+
+	<!-- user관련 -->
+	<select id="userTotal" resultType="userVo" parameterType="userVo"> <!-- kind=3 회원 -->
+			select * from user where kind in (3, 4)
+			
+			<if test='useynb == "y" '>
+				<choose>
+				<when test='name == "" '>
+					and useynb in ('y','b')
+				</when>
+				<otherwise>
+					 and id like '%${name}%' and useynb in ('y','b') or name like '%${name}%' and useynb in ('y','b')
+				</otherwise>
+				</choose>
+			</if>	
+			
+			<if test='useynb == "n" '>
+				<choose>
+				<when test='name == "" or name == null'>
+					and useynb = 'n'
+				</when>
+				<otherwise>
+					 and id like '%${name}%' and useynb = 'n' or name like '%${name}%' and useynb in ('n')
+				</otherwise>
+				</choose>
+			</if>
+
+				order by id limit ${pageIndex} , 10 
+	</select>
+	
+	<select id="userPageCount" resultType="String" parameterType="userVo"> <!-- kind=3 회원 -->
+			select count(*)  from user where kind in (3, 4)
+			
+			<if test='useynb == "y" '>
+				<choose>
+				<when test='name == "" '>
+					and useynb in ('y','b')
+				</when>
+				<otherwise>
+					 and id like '%${name}%' and useynb in ('y','b') or name like '%${name}%' and useynb in ('y','b')
+				</otherwise>
+				</choose>
+			</if>	
+			
+			<if test='useynb == "n" '>
+				<choose>
+				<when test='name == "" or name == null'>
+					and useynb = 'n'
+				</when>
+				<otherwise>
+					 and id like '%${name}%' and useynb = 'n' or name like '%${name}%' and useynb = 'n'
+				</otherwise>
+				</choose>
+			</if>
+			
+	</select>
+	
+	<select id="userCntN" resultType="String" parameterType="userVo">
+		select count(*) as count  from user where
+		<choose>
+			<when test=' name == "" '>
+				<![CDATA[ useynb='n']]>
+			</when>
+			
+			<when test='useynb.equals("n") or useynb == null or useynb == ""'> 
+				<![CDATA[ name like '%${name}%' and useynb = 'n' or
+				id like '%${name}%' and useynb = 'n' ]]>
+			</when>
+			</choose>
+	</select>
+	
+	<select id="userdd" parameterType="userVo" resultType="userVo">
+		select*from user where id = #{id};
+	</select>
+
+	<select id="getIdNo" resultType="userVo" > <!-- 일반회원이면서 *kind=3 회원 -->
+		select id_no from user where kind =3 and useynb in ('y','b')
+	</select>
+
+	<select id="userSearchCnt" resultType="String" parameterType="userVo">
+		select count(*) from user where useynb in ('y','b')
+	</select>
+
+	<update id="reCoverUser" parameterType="blacklistVO" >
+		update user set useynb = 'y' where id = #{id} 
+	</update>
+	
+	
+	<!-- 관리자관련 -->
+	<select id="searchIdAdmin" resultType="userVo" parameterType="userVo">
+		select * from user 
+		where name like '%${name}%' and kind= 4 or
+		id like '%${name}%' and kind=4
+		
+		order by id limit ${pageIndex},10 
+	</select>
+	
+	<select id="searchIdAdminPageCnt" resultType="String" parameterType="userVo">
+		select count(*) from user 
+		where name like '%${name}%' and kind= 4 or
+		id like '%${name}%' and kind=4
+	</select>
+
+	<select id="adminSearchCnt" resultType="Integer">
+		select count(*) from user where kind=4
+	</select>
+	
+	
+	<update id="adminreg" parameterType="userVo">
+		update user set kind = 2 where id = #{id}
+	</update>
+	
+	<update id="returnAdmin" parameterType="String">
+		update user set kind = 3 where id = #{id}
+	</update>
+	
+	
+	<!-- 블랙리스트관련 -->
+	<select id="blackTotal" resultType="userVo" parameterType="userVo" >
+		select a.id,a.name,a.email,a.phone,a.regdate,b.content from user
+	    a right join blacklist b on a.id = b.id
+	    <where>
+	    <choose>
+			<when test='name == null or name == "" '> b.name like '%%'</when>
+			<otherwise>  b.name like '%${name}%'  or b.id like '%${name}%' </otherwise>
+				
+		</choose>
+	    </where>
+		order by a.id asc limit ${pageIndex},10 
+	</select>
+	<select id="blackPageCnt" resultType="String" parameterType="userVo" >
+		select count(*) from user
+	    a right join blacklist b on a.id = b.id
+	    <where>
+	    <choose>
+			<when test='name == null or name == "" '> b.name like '%%'</when>
+			<otherwise>  b.name like '%${name}%'  or b.id like '%${name}%' </otherwise>
+				
+		</choose>
+	    </where>
+		
+	</select>
+	
+	<select id="blackCnt" resultType="Integer">
+		select count(*) as cnt from blacklist
+	</select>
+	<update id="regBlack" parameterType="userVo" >
+		update user set useynb = 'b' where id = #{id} 
+	</update>
+	
+	<insert id="insertBlack" parameterType="blacklistVO">
+		insert into blacklist
+		value(#{id }, #{name }, #{id_no }, #{email }, #{phone }, #{content } )
+	</insert>
+	<delete id="deleteBlack" parameterType="blacklistVO">
+		delete from blacklist where id = #{id }
+	</delete>
+	
+	<update id="backupId" parameterType="String">
+		update user set useynb='y' where id=#{id}
+	</update>
+</mapper>

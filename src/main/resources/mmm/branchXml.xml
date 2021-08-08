@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="aaa.db.bchMapp" >
+
+	<select id="roomPrice" resultType="roomVO" >
+		select distinct b_name, black_price, red_price from room
+	</select>
+	
+	<update id="fixBlackPrice" parameterType="roomVO">
+		update room set black_price = #{black_price} where b_name = #{b_name}
+	</update>
+	
+	<update id="fixRedPrice" parameterType="roomVO">
+		update room set red_price = #{red_price} where b_name = #{b_name}
+	</update>
+	
+	<select id="optionList" parameterType="String" resultType="roomOptionVO">
+		select * from room_option where b_name = #{b_name}
+	</select>
+	<select id="optionCnt" parameterType="roomOptionVO" resultType="Integer">
+		select count(*) from room_option where b_name = #{b_name}
+	</select>
+	<select id="optionCntString" parameterType="String" resultType="Integer">
+		select count(*) from room_option where b_name = #{b_name}
+	</select>
+	
+	<insert id="insertOption" parameterType="roomOptionVO">
+		insert into room_option(b_name, event, price)
+		values(#{b_name},#{event},#{price})
+	</insert>
+	
+	<delete id="deleteOption" parameterType="roomOptionVO">
+		delete from room_option where b_name = #{b_name} and event = #{event}
+	</delete>
+	
+	<select id="addOptionList" parameterType="roomOptionVO" resultType="roomOptionVO">
+		select * from room_option where b_name = #{b_name}
+	</select>
+	
+	
+	
+	
+	
+</mapper>

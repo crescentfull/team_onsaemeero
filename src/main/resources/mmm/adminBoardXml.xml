@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="aaa.db.adminBoardMapp" >
+
+	<select id="bAdminMapp" resultType="userVo">
+		select id,name,email,phone, regdate  from user where kind=2 order by regdate;
+	</select>
+	<select id="adminCnt" resultType="Integer">
+		select count(*) from user where kind=2
+	</select>
+	
+	<delete id="bAdminDelete" parameterType="String">
+		update user set kind = 3 where id = #{id}
+	</delete>
+</mapper>

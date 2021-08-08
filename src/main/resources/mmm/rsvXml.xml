@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="aaa.db.rsvMapp" >
+
+	<select id="rsvList" resultType="reservationVO" parameterType="reservationVO">
+		select r.no, r.b_name, r.id, u.name, r.room_name, r.indate, r.outdate, r.price, b.content from reservation r 
+		left join user u on r.id = u.id 
+		left join blacklist b on r.id = b.id 
+		<where> 
+	
+			<choose>
+				<when test='firdate == "" and secdate == "" and id == "" '>
+					r.id like '%%'
+				</when>
+				<when test='firdate == "" and secdate == "" and id != "" '>
+					r.id like '%${name}%' or u.name like '%${name}%'
+				</when>
+				<when test='firdate != "" and secdate != "" and id == ""'>
+					r.indate between #{firdate} and #{secdate}
+				</when>
+				<when test='firdate != "" and secdate != "" and id != ""'>
+					r.id like '%${name}%' and r.indate between #{firdate} and #{secdate} 
+					or
+					u.name like '%${name}%' and r.indate between #{firdate} and #{secdate}
+					
+				</when>
+
+			</choose>
+			
+		</where>
+		
+		order by indate limit ${pageIndex},10
+	</select>
+	
+	<select id="rsvListCnt" resultType="String" parameterType="reservationVO">
+		select count(*) from reservation r 
+		left join user u on r.id = u.id 
+		left join blacklist b on r.id = b.id 
+		<where> 
+	
+			<choose>
+				<when test='firdate == "" and secdate == "" and id == "" '>
+					r.id like '%%'
+				</when>
+				<when test='firdate == "" and secdate == "" and id != "" '>
+					r.id like '%${name}%' or u.name like '%${name}%'
+				</when>
+				<when test='firdate != "" and secdate != "" and id == ""'>
+					r.indate between #{firdate} and #{secdate}
+				</when>
+				<when test='firdate != "" and secdate != "" and id != ""'>
+					r.id like '%${name}%' and r.indate between #{firdate} and #{secdate}
+					or
+					u.name like '%${name}%' and r.indate between #{firdate} and #{secdate}
+					
+				</when>
+
+			</choose>
+			
+		</where>
+		
+		
+	</select>
+	
+	
+	<select id="rsvSubList" resultType="reservationVO" parameterType="reservationVO">
+		select r.no, r.b_name, r.id, u.name, r.room_name, r.indate, r.outdate, r.price, b.content from reservation r 
+		left join user u on r.id = u.id 
+		left join blacklist b on r.id = b.id 
+		
+		<where> 
+	
+			<choose>
+				
+				<when test='firdate == "" and secdate == "" and id == "" '>
+					r.id like '%%' and r.b_name = #{b_name}
+				</when>
+				
+				<when test='firdate == "" and secdate == "" and id != "" '>
+					 r.id like '%${id}%' and r.b_name = #{b_name}  or u.name like '%${id}%' and r.b_name = #{b_name}
+				</when>
+				
+				<when test='firdate != "" and secdate != "" and id == ""'>
+					r.indate between #{firdate} and #{secdate} and r.b_name = #{b_name}
+				</when>
+				
+				<when test='firdate != "" and secdate != "" and id != ""'>
+					r.id like '%${id}%'  and r.indate between #{firdate} and #{secdate} and r.b_name = #{b_name}
+					or 
+					u.name like '%${id}%' and r.indate between #{firdate} and #{secdate} and r.b_name = #{b_name}
+				</when>
+				<otherwise>
+					r.b_name = #{b_name}
+				</otherwise>
+			</choose>
+			
+		</where>
+		
+		order by indate limit ${pageIndex}, 10
+	</select>
+	
+	
+	<select id="rsvSubListCnt" resultType="String" parameterType="reservationVO">
+		select count(*) from reservation r 
+		left join user u on r.id = u.id 
+		left join blacklist b on r.id = b.id 
+		
+		<where> 
+	
+			<choose>
+				
+				<when test='firdate == "" and secdate == "" and id == "" '>
+					r.id like '%%' and r.b_name = #{b_name}
+				</when>
+				
+				<when test='firdate == "" and secdate == "" and id != "" '>
+					 r.id like '%${id}%' and r.b_name = #{b_name}  or u.name like '%${id}%' and r.b_name = #{b_name}
+				</when>
+				
+				<when test='firdate != "" and secdate != "" and id == ""'>
+					r.indate between #{firdate} and #{secdate} and r.b_name = #{b_name}
+				</when>
+				
+				<when test='firdate != "" and secdate != "" and id != ""'>
+					r.id like '%${id}%'  and r.indate between #{firdate} and #{secdate} and r.b_name = #{b_name}
+					or 
+					u.name like '%${id}%' and r.indate between #{firdate} and #{secdate} and r.b_name = #{b_name}
+				</when>
+				<otherwise>
+					r.b_name = #{b_name}
+				</otherwise>
+			</choose>
+			
+		</where>
+	
+	</select>
+	
+	<delete id="resvDel" parameterType="Integer" >
+		
+		delete from reservation where no = #{no}
+	</delete>
+</mapper>

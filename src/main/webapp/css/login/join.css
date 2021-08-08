@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+ section {
+	width : 800px;
+	margin : 200px auto 100px auto;
+	border-top : 5px solid #52565f;
+}
+table {
+	width : 800px;
+}
+
+td {
+	padding : 40px 0px 20px 10px;
+}
+
+ .first {
+	width : 30%;
+	height : 42px;
+	padding-left : 50px;
+	font-size : 20px;
+	font-weight : bold;
+}
+.second {
+	width : 70%;
+	height : 42px;
+	font-size : 30px;
+	padding : 0;
+}
+.second > input{
+	width : 385px;
+	height : 42px;
+	font-size : 22px;
+	text-align : center;
+	border-radius : 10px;
+	border : 1px solid #52565f; 
+}
+
+div#pwchkbox {
+	width : 70%;
+	height : 42px;
+}
+#pw {
+	width : 385px;
+	height : 42px;
+	font-size : 22px;
+	text-align : center;
+	border-radius : 10px;
+	border : 1px solid #52565f; 
+}
+#pwchk{
+	width : 385px;
+	height : 42px;
+	font-size : 22px;
+	text-align : center;
+	border-radius : 10px;
+	border : 1px solid #52565f; 
+	float : left;
+}
+
+#inputid {
+	width : 385px;
+}
+#inputemail {
+	width : 385px;
+}
+#front {
+	width : 175px;
+	height : 42px;
+	font-size : 22px;
+	text-align : center;
+	border-radius : 10px;
+	border : 1px solid #52565f;
+}
+#back {
+	width : 42px;
+	height : 42px;
+	font-size : 22px;
+	text-align : center;
+	border-radius : 10px;
+	border : 1px solid #52565f;
+}
+
+button {
+	width : 100px;
+	height : 42px;
+	border-radius : 10px;
+	border : none;
+	font-size : 16px;
+	color : white;
+	font-weight : bold;
+	background-color : #52565f;
+}
+button:hover {
+	border : 1px solid #52565f;
+	background-color : black;
+	color : white;
+}
+#lastline {
+	text-align : center;
+}
+#joinbtn {
+	width : 200px;
+	height : 70px;
+	font-size : 23px;
+	background-color : #52565f;
+	border : none;
+	color : white;
+	border-radius : 15px;
+	font-weight: bold;
+	margin-bottom : 20px;
+}
+#joinbtn:hover {
+	background-color : black;
+	color : white;
+}
+#idchkbox,#emailchkbox {
+	width : 400px;
+	height : 42px;
+}
+#id,#email {
+	width : 70%;
+	height : 42px;
+	font-size : 22px;
+	text-align : center;
+	border-radius : 10px;
+	border : 1px solid #52565f;
+	float : left;
+}
+#idok,#emailok {
+	width : 27%;
+	height : 42px;
+	font-size : 20px;
+	text-align : center;
+	border : none;
+	color : red;
+}
+img {
+	float : right;
+	margin : 0px -50px 0px 0px;
+	width : 10%;
+	height : 42px;
+
+
+} 
+

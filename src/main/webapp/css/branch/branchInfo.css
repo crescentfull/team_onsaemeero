@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+
+div#onsemiro_ex{
+	margin : 30px auto;
+	width : 300px;
+	height : 200px;
+}
+img#logo1{
+	width : 300px;
+	height : 200px;
+}
+
+div#onsemiroInfo{
+	text-align : center;
+}
+div#onsemiroInfo h1 {
+	color : black;
+	font-weight: 900;
+	font-size : 50px;
+}
+div#onsemiroInfo p {
+	color : gray;
+	font-weight: 900;
+	font-size : 20px;
+}
+div#onsemiroInfo span {
+	color : brown;
+}
+
+div.info{
+	margin : 100px 0px 0px 0px;
+}
+
+
+div#s_info h1{
+	text-align : left;
+	position : absolute;
+	font-size : 60px;
+	font-weight: 900;
+	color : white;
+}
+img#seoulInfo{
+	width : 1400px;
+}
+div#s_info input#seoulBt {
+	font-weight: 900;
+	position : absolute;
+	font-size : 2em;
+	margin : 352px -300px;
+	width : 300px;
+	height : 100px;
+	color : white;
+	background-color :transparent;
+	border : none;
+	box-shadow: 0px 10px 10px 0px black;
+}
+div#s_info input#seoulBt:hover {
+	background-color :black;
+	color : white;
+	font-weight: 900;
+}
+
+
+
+
+div#g_info h1{
+	position : absolute;
+	font-size : 60px;
+	font-weight: 900;
+	color : white;
+	margin : 50px 500px;
+}
+img#gInfo{
+	width : 1400px;
+	height : 450px;
+	float : right;
+	margin : 0px 0px 100px 0px;
+}
+div#g_info input#gBt {
+	font-weight: 900;
+	position : absolute;
+	font-size : 2em;
+	width : 300px;
+	height : 100px;
+	color : white;
+	margin : 350px 1600px;
+	background-color :transparent;
+	border : none;
+	box-shadow: 0px 10px 10px 0px black;
+}
+div#g_info input#gBt:hover {
+	background-color :black;
+	color : white;
+	font-weight: 900;
+}

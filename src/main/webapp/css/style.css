@@ -1,0 +1,54 @@
+/* Google Web Font  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+/* FontAwesome 4.7 CDN */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	color: #222;
+}
+a {
+	text-decoration: none;
+	color: #222;
+}
+
+/* Dropdown */
+.dropdown {
+	width: 200px;
+}
+
+.dropdown button {
+	border: none;
+	background-color: gold;
+	color: #fff;
+	padding: 20px;
+	width: inherit;
+}
+.dropdown-submenu {
+	border: 1px solid;
+	line-height: 40px;
+	width: inherit;
+	text-align: center;
+	box-sizing: border-box;
+	border-top: none;
+	display: none;
+}
+.dropdown-submenu a {
+	display: block;
+	border-bottom: 1px dashed grey;
+}
+.dropdown-submenu a:last-child {
+	border-bottom: none;
+}
+.dropdown:hover .dropdown-submenu {
+	display: block;
+}
+.dropdown-submenu a:hover {
+	background-color: brown;
+	color: #fff;
+}
+.dropdown:hover button{
+	background-color: skyblue;
+}

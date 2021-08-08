@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.content_wrapper {
+	width : 40%;
+	margin : 150px auto;
+}
+
+#id,#pw {
+	width : 40%;
+	height : 100px;
+	line-height : 55px;
+	text-align : center;
+	font-size : 23px;
+	font-weight : bold;
+	border-radius : 50px;
+}
+#id {
+	float : left;
+	margin : 50px 0 50px 50px;
+	background-color : #bcaaa4;
+	color : #6d4c41;
+	border : none;
+}
+#id:hover {
+	background-color : #6d4c41;
+	color : #bcaaa4;
+}
+#pw {
+	float : right;
+	margin : 50px 50px 50px 0;
+	background-color : #b0bec5;
+	color : #546e7a;
+	border : none;
+}
+#pw:hover {
+	background-color : #546e7a;
+	color : #b0bec5;
+}

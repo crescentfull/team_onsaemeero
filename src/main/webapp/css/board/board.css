@@ -1,0 +1,249 @@
+@charset "UTF-8";
+.content_wrapper {
+	margin: 0 auto;
+	width:50%;
+	/* align-items: center; */
+	min-height: 50vh;
+}
+/*! 게시글 상세페이지 */
+
+.content_wrapper a {
+	text-decoration: none;
+}
+.content_wrapper td {
+	color: #52565f;
+}
+
+.boarddetail {
+    width: 1000px;
+    border-top: 2px solid black;
+    margin-bottom: 100px;
+}
+.boarddetail td {
+    padding: 10px;
+    /* border: 1px solid #999; */
+    font-size: 14px;
+    border-bottom: 1px solid #ccc;
+}
+.boarddetail td.head {
+	text-align: center;
+	width: 10%;
+}
+.boarddetail td.list {
+	text-align: center;
+}
+.boarddetail .contents td.head {
+	font-weight: bold;
+}
+
+.boarddetail td {
+    text-align: left;
+}
+.board_list .searchbox {
+	text-align: right;
+}
+.boarddetail a {
+	color: black;
+	font-size: large;
+    float: right;
+    padding-right: 10px;
+}
+
+.boarddetail a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+a#write:hover {
+	font-weight: bolder;
+	
+}
+/* 게시글 입력 폼 */
+.board_write {
+	width: 1000px;
+	border-bottom: 1px solid; 
+	border-top: 1px solid;
+	 
+}
+.board_write td {
+	border-bottom: 1px solid;
+	font-size: 14px;
+}
+.board_write td.head {
+	text-align: center;
+	width: 10%
+}
+.board_write td a {
+	float: right;
+	display: block;
+	color: black;
+	padding-right: 20px;
+	font-size: 20px;
+}
+.board_write tr td a:hover {
+	font-weight: 900;
+}
+.board_write td.reply_input input {
+	width: 100px;
+	font-size: 18px;
+	text-align: center;
+	background: white;
+	color: black;
+	letter-spacing: 7px;
+	border-radius: 5px;
+	border: 2px solid black;
+}
+board_write td.reply_input>a.input:hover {
+	background: black;
+	color: white;
+	cursor: pointer;
+}
+
+/* 게시글 수정 폼 */
+
+/* 댓글 폼 */
+.commentform {
+	width: 1000px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+	border-bottom: 2px solid black;
+	border-top: 2px solid black;
+}
+.commentform button{
+      float: right;
+      width: 100px;
+      background: black;
+      color: white;
+      border-radius: 10%;
+      font-size: large;
+      letter-spacing: 5px;
+      text-align: center;
+     text-decoration: none;
+     font-weight: bold;
+}
+.commentform textarea {
+	margin-top: 10px;
+}
+
+.commentArea a {
+	font-weight: bold;
+	font-size: 20px;
+	float: right;
+	padding-right: 10px;
+
+}
+/* 게시글 리스트 */
+#contents table {
+    border-collapse: collapse;
+}
+#contents a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* .board_list_wrap {
+    padding: 50px;
+} */
+
+.board_list {
+    width: 1000px;
+    border-top: 2px solid black;
+}
+
+.board_list tr {
+    border-bottom: 1px solid #ccc;
+}
+.board_list th {
+    height: 20px;
+    text-align: center;
+}
+.board_list th,
+.board_list td {
+    padding: 10px;
+    /* border: 1px solid #999; */
+    font-size: 14px;
+}
+
+.board_list td {
+    text-align: center;
+}
+.board_list .searchbox {
+	text-align: right;
+}
+.board_list .title {
+    width: 50%;
+    text-align: left;
+}
+
+.board_list .title:hover {
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.233);
+    font-weight: bold;
+}
+#pagenum {
+	height: 40px;
+}
+#pagenum a {
+	color: black;
+	padding: 20px;
+}
+#pagenum a:hover {
+	font-weight: bold;
+	font-size: x-large;
+}
+a#write:hover {
+	font-weight: bolder;	
+}
+
+.searchbox select{
+	width: 60px;
+	height: 26px;
+	border: 2px solid #52565f;
+	border-radius: 5px;
+}
+.searchbox input[type=text] {
+	height: 20px;
+	border: 2px solid #52565f;
+	border-radius: 5px;
+}
+/* [type=submit] */
+.board_list input[type=submit] {
+	height: 26px;
+	width: 50px;
+	border: 2px solid #52565f;
+	border-radius: 5px;
+	color: black;
+	background: white;
+	padding-top: 3px;
+}
+.board_list input[type=submit]:hover {
+	font-weight: bold;
+	color: black;
+}
+/* 게시판 목록 */
+.boardlist {
+	margin:0 auto;
+	margin-bottom:80px; 
+	width: 1000px;
+	border-bottom: 1px solid;
+	text-align: center;
+	margin-top:100px;
+	display: flex;
+	justify-content: center;
+}
+.boardlist ul li {
+	display: inline-block;
+	padding-right: 50px;
+	list-style: none;
+}
+.boardlist ul li a{
+	text-decoration: none;
+	color: black;
+	font-size: large;
+}
+.boardlist li:hover {
+	font-weight: bold;
+	text-decoration: none;
+}

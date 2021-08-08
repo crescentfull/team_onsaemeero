@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="aaa.db.RoomMapp">
+
+	<select id="roomSearch" resultType="RoomVO" parameterType="RoomVO" >
+	
+		select * from room where b_name = #{b_name} 
+		and room_name not in (select room_name from reservation where 
+		(b_name = #{b_name} and (#{indate} between indate and outdate) or (indate > #{indate} and #{outdate} > indate)))
+	</select>
+		
+	<select id="reservationRoom" parameterType="ReservationVO" resultType="ReservationVO">
+		
+		select * from reservation
+		
+	</select>
+		
+	<insert id="reservationReg" parameterType="ReservationVO">
+		insert into reservation (indate, outdate, b_name, room_name, id, price, request) 
+				values (#{indate}, #{outdate}, #{b_name}, #{room_name}, #{id}, #{price}, #{request})
+	</insert>
+		
+	<select id="nowReservation" resultType="ReservationVO" parameterType="ReservationVO">
+		select * from reservation where outdate > #{indate} and id = #{id}
+	</select>
+		
+	<select id="selectBlack" resultType="String"> 
+		select id from blacklist 
+	</select>	
+		
+		
+		
+		
+</mapper>

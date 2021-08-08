@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+/* 상단 고정 css */
+div#content{
+	width : 70%;
+	margin : 50px auto;
+}
+div#branchContent{
+	width : 70%;
+	height : 100px;
+	font-weight: 900;
+	margin : 0px auto -85px auto;
+}
+ul#branch{
+	margin : 0px 0px -10px 0px;
+	text-align : center;
+}
+
+li.branch{
+	display : inline-block;
+	border : none;
+	margin : 0px -5px 0px -5px;
+	font-size : 30px;
+	width : 200px;
+	border : 5px solid #52565f;
+	padding : 10px 30px;
+}
+li.branch a{
+	color : #52565f;
+	text-decoration: none;
+}
+div#onsemiro_ex{
+	text-align : center;
+	padding : 0px 20px ;
+}
+div#onsemiro_ex img{
+	width : 300px;
+}
+div#onsemiro_su_ex1{
+	width : 100%;
+	border-top : 5px solid #52565f;
+	font-weight: 900;
+}
+
+div#reservation_btn{
+	margin : 100px 0px;
+	text-align : center;
+}
+
+button#reservation_btn{
+	box-shadow: 1px -1px 16px -2px #000000;
+	background-color:#000000;
+	border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:28px;
+	padding:19px 41px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #000000;
+	font-weight: 900;
+}
+
+button#reservation_btn:hover {
+	background-color:#000000;
+}
+button#reservation_btn:active {
+	position:relative;
+	top:1px;
+}
+
+
+/* 변동 부분 */
+div#bukchon{
+	width : 800px;
+	float : left;
+}
+div#bukchon h2 {
+	width : 280px;
+	font-size : 40px;
+	font-weight: 900;
+}
+div#bukchon span{
+	color : brown;
+}
+div#bukchon p {
+	font-size : 30px;
+	color : gray;
+	font-weight: 900;
+}
+img#bukchonimg1 {
+	width : 500px;
+	padding : 50px 0px 0px 0px;
+}
+
+div#bukchonimg2 {
+
+	margin : -320px 0px 0px 30px;
+}
+
+
+
+div#gyeong{
+	width : 1300px;
+	text-align : right;
+	margin : 100px 0px 0px 0px;
+}
+div#gyeong h2 {
+	font-size : 50px;
+	font-weight: 900;
+}
+div#gyeong span{
+	color : brown;
+}
+div#gyeong p {
+	font-size : 30px;
+	color : gray;
+	font-weight: 900;
+}
+
+div#gyeongimg1{
+	margin : -100px 0px 0px 40px;
+	width : 500px;
+
+	float : left;
+}
+img#gyeongimg1{
+		height : 650px;	
+}
+div#gyeongimg2{
+	margin : 100px;
+	text-align : right;
+	margin : 100px 0px 0 250px;
+}
+img#gyeongimg2{
+	width : 700px;
+}
+
+/*강릉   */
+
+img#gp1 {
+	width : 500px;
+	padding : 50px 0px 0px 0px;
+	height : 600px;
+}
+
+img#jmj1 {
+	width : 700px;
+	height : 400px;
+}
+
+/*전주  */
+img#jjho1 {
+	width : 500px;
+	padding : 50px 0px 0px 0px;
+	height : 600px;
+}
+img#jjho2 {
+	width : 600px;
+	height : 400px;
+}
+img#jjsd1{
+	height : 700px;
+}
+
+
+/*경주  */
+img#bmj1 {
+	width : 600px;
+	height : 500px;
+}
+img#bmj2{
+	height : 400px;
+}
+

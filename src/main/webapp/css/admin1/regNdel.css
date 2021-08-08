@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.drop-button5{font-weight: bold;}
+
+button.del{width:100%; height:100%;}
+#rnd{width:80%; float:left;}
+#tb-rnd{
+	border-collapse: collapse;
+	border: 1px solid #bfbfbf;
+	margin-top: 150px;
+	
+	margin-left:auto;
+	margin-right:auto;
+	color:#171b20;
+	
+	font-size:20px;}
+#tb-rnd td, #tb-rnd th{
+	padding:20px; border:none;
+	
+	color:#403528;
+}
+#tit {
+	border-bottom: 1px solid #dcddde;
+	
+	font-weight:bold;
+}
+button#del{
+	border:none;
+	padding:20px;
+	background:white;
+	font-size:18px;
+	cursor:pointer;
+}
+#tit td{
+background: #dcddde;
+}

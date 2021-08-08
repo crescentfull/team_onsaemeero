@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org?DTD Mapper3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="aaa.db.CommentMapppp">
+
+	<select id="commentCount" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM comment
+    </select>
+    
+    <select id="commentList" resultType="aaa.vo.CommentVO" parameterType="CommentVO" >
+        SELECT
+            *
+        FROM comment where b_no = #{b_no} order by c_no desc
+    </select>
+    
+    
+    <insert id="commentInsert" parameterType="CommentVO">
+        INSERT INTO comment(C_NO, B_NO, CONTENT, WRITER, REG_DATE)
+        			VALUES(#{c_no},#{b_no},#{content},#{writer},now()) 
+    </insert>
+    
+    <update id="commentUpdate" parameterType="CommentVO">
+        UPDATE comment
+            SET
+            CONTENT = #{content},
+            modify_date = now()
+        WHERE c_no = #{c_no}
+    </update>
+    
+    <delete id="commentDelete" parameterType="int">
+        DELETE FROM comment WHERE C_NO = #{c_no}
+    </delete>
+
+
+
+
+</mapper>

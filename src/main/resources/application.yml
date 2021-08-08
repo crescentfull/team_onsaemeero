@@ -1,0 +1,36 @@
+server :
+    port : 8888
+
+    
+spring :
+    mvc :
+        view :
+            prefix : /views/
+            suffix : .jsp
+            
+    servlet:
+      multipart:
+          max-file-size: 10MB
+          max-request-size : 10MB
+
+    datasource : 
+        driver-class-name : com.mysql.cj.jdbc.Driver
+        url : jdbc:mysql://onsaemeero.cafe24.com:3306/onsaemeero
+        username : onsaemeero
+        password : dhstoalfh!!3
+    
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: green.teamproj1@gmail.com
+        password: "gksdhrxlavmf"
+        properties:
+          mail:
+            smtp:
+              auth: true
+              starttls:
+                enable: true
+        
+mybatis :
+    mapper-locations : mmm/**/*.xml
+    type-aliases-package : aaa.vo

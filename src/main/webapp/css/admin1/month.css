@@ -1,0 +1,105 @@
+@charset "UTF-8";
+	.drop-button3{font-weight: bold;}
+	#title{margin: 50px;}
+	div#salesMonth{
+		float:left;
+		width:80%;
+		text-align:center;
+		margin:0;
+		text-align:center;
+		margin-top: 15px;
+		font-size:18px;
+	}
+	
+	table#tb-sales {
+		margin: auto;
+		margin-top: 50px;
+		width:80%;
+		color:#171b20;
+		border: 1px solid #FFF5EE;
+		border-collapse: collapse;
+		font-size:18px;
+	}
+	table#tb-sales th,td{
+		padding: 15px 10px;
+		text-align:center;
+		border:none;
+	}
+	
+	table#tb-sales tr#tit{
+		background: #dcddde;
+	}
+	table#tb-sales td#td-title{
+		font-weight:bold;
+		font-size:20px;
+		text-align:left;
+	}
+	table#tb-sales td#schnull{
+		text-align: center;
+	}
+	select#year1,select#year2,select#month1,select#month2 {
+	height:40px;
+	 width:100px; 
+	 padding-left: 10px; 
+	 font-size:18px;
+	 margin:10px;
+	 border-radius: 10px;
+	 }
+	 
+	 select#year1{
+	 margin-left: 100px;
+	 }
+	 select#year2{
+	 margin-right: 10px;
+	 }
+	 select#month2{
+	 margin-right: 30px;
+	 }
+	button{padding:1px 6px;}
+	tr:first-child > td{text-align:left;}
+	
+	td#td-sch-none{ height:250px; }
+	p{width: auto; margin:30px;}
+	p>input[type=text] {
+		width:330px; 
+		height:25px; 
+		
+		padding:10px; 
+		border: 2px solid #efefef;
+		border-radius: 10px;
+		box-shadow: 0px 5px 15px 2px #efefef;
+		/* h-offset: 그림자의 좌우 위치 설정
+		v-offset: 그림자의 상하 위치 설정
+		blur: 그림자의 흐려짐 정도의 범위
+		spread: 그림자의 크기
+		color: 그림자 색상
+		inset: (optional) 요소 내부에 그림자 표현, 기본적으로 그림자는 요소 외부에 위치 */
+	}
+	p>input[type=text]:focus {
+		outline:none; 
+		border: 2px solid #dfdfdf;
+		box-shadow: 0px 5px 20px 3px #dfdfdf;
+		transition: 0.2s;
+	}
+	
+	button#btn-sch{
+	border:1px solid black;
+	background:white;
+	
+	cursor:pointer;
+	color:#EEEEEE;
+	font-size:16px;
+	background: #362222;
+	border-radius: 30px;
+	width:60px;
+	height:60px;
+	}
+	button#btn-sch:hover{
+	font-weight: bold;
+	transition: 0.2s;
+	}
+	#tr-left{border:none;}
+	
+	tr#tr-result{
+	font-weight: bold;
+	}

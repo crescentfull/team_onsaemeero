@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+
+.drop-button1{font-weight: bold;}
+#title{margin: 50px; margin-bottom:50px;}
+div#user_stats{
+	margin: 0 auto; 
+	overflow:hidden;
+	width:80%;
+	float:left; 
+	margin-top: 15px;
+	
+}
+div#gender{
+	float:left;
+	margin-left:250px;
+	margin-top:50px;
+	overflow:hidden;
+	margin-right:200px;
+}
+div#age{
+	margin-top:50px;
+	float:left;
+	width:40%;
+	overflow:hidden;
+	height:400px;
+	margin-left:50px;
+}
+div#clear{clear:both}
+.pie-chart1 {
+	 display:inline-block;
+	 width: 300px;
+	 height: 300px;
+	 border-radius: 50%;
+	 transition: 0.3s;
+	 margin-top:40px;
+}
+HTML SCSSResult Skip Results Iframe
+EDIT ON
+.blind {
+	 overflow: hidden;
+	 position: absolute;
+	 width: 1px;
+	 height: 1px;
+	 margin: -1px;
+	 clip: rect(0 0 0 0);
+}
+.graph_wrap {
+	overflow: hidden;
+	position: relative;
+	width: 200px;
+	margin: 0 auto;
+	padding: 0;
+	background-color: white;
+	top:30px;
+	
+}
+.data_wrap {
+    height: 170px;
+    width: 200px;
+  	background-image: linear-gradient(transparent 24px, rgba(229,233,235,0.4) 24px), linear-gradient(90deg, #ecf0f2 10px, transparent 10px);
+    background-size: 80% 50px, 1px 80%;
+    font-size: 0;
+    float: left;
+}
+.data {
+    position: relative;
+    float: left;
+    z-index: 10;
+    width: 27px;
+    height: 100%;
+    margin-left: 4px
+}
+
+.data:first-child {
+    margin-left: 0
+}
+
+.bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 0;
+    color: transparent;
+    height: 100%;
+}
+
+.level5 {
+    background-color: #32a1ff
+}
+.level4 {
+    background-color: #00c73c
+}
+.level3 {
+    background-color: #fda60e
+}
+.level2 {
+    background-color: #e64747
+}
+.level1 {
+    background-color: red
+}
+div#col {width:100px;}
+div#r{ background: #0988e6; height:20px; width:20px; float:left;margin-right: 5px;}
+div#y{ background: #e79e07; height:20px; width:20px; float:left;margin-right: 5px;}
+div.clear{clear: both;}
+div.ggg{float:left;}
+span#left{float:left;}
+div#y2{background: red; height:20px; width:20px; float:left; margin-right: 5px;}
+div#y3{background: #e64747; height:20px; width:20px;float:left;margin-right: 5px;} 
+div#y4{background: #fda60e; height:20px; width:20px;float:left;margin-right: 5px;}
+div#y5{background: #00c73c; height:20px; width:20px;float:left;margin-right: 5px;}
+div#y6{background: #32a1ff; height:20px; width:20px;float:left;margin-right: 5px;}

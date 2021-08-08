@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.content_wrapper {
+	margin : 50px auto 30px auto;
+	width : 700px;
+}
+
+.content_wrapper > form > #input {
+	float : left;
+	width : 58%;
+	font-size : 20px;
+}
+.content_wrapper > form > #input > p > input {
+	width : 270px;
+	height : 40px;
+	text-align : center;
+	font-size : 20px;
+	border : 1px solid lightgray;
+	border-radius : 10px;
+}
+.content_wrapper > form > #submitbtn {
+	float : right;
+	width : 42%;
+}
+.content_wrapper > form > #submitbtn > button {
+	width : 200px;
+	height : 40px;
+	font-size : 15px;
+	margin-top : 80px;
+	border-radius : 15px;
+	border : none;
+	background-color : #c2c2c2;
+	font-weight : bold;
+}
+.content_wrapper > form > #submitbtn > button:hover {
+	background-color : #494949;
+	color : #e2f1f8;
+}

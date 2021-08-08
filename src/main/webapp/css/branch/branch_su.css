@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+div#content{
+	width : 70%;
+	margin : 50px auto;
+}
+div#branchContent{
+	width : 70%;
+	height : 100px;
+	font-weight: 900;
+	margin : 0px auto -85px auto;
+}
+
+div#branch_su_structure{
+	width : 100%;
+	height : 1200px;
+	margin : 100px 0px 300px 0px;
+}
+div#branch_su_structure1 img{
+	width : 70%;
+	margin : 40px 200px 200px 200px;
+}
+div#branch_su_structure2 img{
+	width : 50%;
+	float : left;
+}
+div#branch_su_structure3 table{
+	margin : 0px auto;
+	border-top : 3px solid #52565f;
+	border-bottom : 3px solid #52565f;
+	width : 45%;
+	font-size : 20px;
+	background-color : #f5f7f7;
+	font-weight: 900;
+}
+div#branch_su_structure3 table td{
+	padding : 5px 12px;
+}
+div#branch_su_structure3 table tr td span{
+	font-weight: 900;
+}
+div#branch_su_structure3 table tr td {
+	font-weight: 500;
+}
+ul#branch{
+	margin : 0px 0px -10px 0px;
+	text-align : center;
+}
+li.branch{
+	display : inline-block;
+	border : none;
+	margin : 0px -5px 0px -5px;
+	font-size : 30px;
+	width : 200px;
+	border : 5px solid #52565f;
+	padding : 10px 30px;
+}
+li.branch a{
+	color : #52565f;
+	text-decoration: none;
+}
+
+div#onsemiro_ex{
+	text-align : center;
+	padding : 0px 20px ;
+}
+div#onsemiro_ex img{
+	width : 300px;
+}
+div#onsemiro_su_ex1{
+	width : 100%;
+	border-top : 5px solid #52565f;
+	font-weight: 900;
+	
+}
+
+div#reservation_btn{
+	margin : 100px 0px;
+	text-align : center;
+}
+
+button#reservation_btn{
+	box-shadow: 1px -1px 16px -2px #000000;
+	background-color:#000000;
+	border-radius:10px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:28px;
+	padding:19px 41px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #000000;
+	font-weight: 900;
+}
+
+button#reservation_btn:hover {
+	background-color:#000000;
+}
+button#reservation_btn:active {
+	position:relative;
+	top:1px;
+}
+
+
+div#onsemiro_su_ex1 p#p1{
+	font-size : 30px;
+	margin : 20px 20px;
+}
+div#onsemiro_su_ex1 p#p2{
+	color : gray;
+	margin : 20px 20px;
+}
+div#onsemiro_su_ex1 span#span1{
+	color : brown;
+}
+
+div.branchImg p {
+	font-weight: 700;
+}
+div.branchImg#img1{
+	margin : 30px 0px 0px 100px;
+	width : 600px;
+	height : 550px;
+	float : left;
+}
+div.branchImg img#img1{
+	width : 450px;
+	height : 500px;
+}
+div.branchImg#img2{
+	margin : -80px 0px 0px 0px;
+	width : 500px;
+	height : 500px;
+	float : left;
+}
+div.branchImg img#img2{
+	width : 600px;
+	height : 450px;
+}
+
+div#onsemiro_su_ex2{
+	float : right;
+	width : 100%;
+	font-weight: 900;
+	text-align : right;
+}
+
+div#onsemiro_su_ex2 p#p1{
+	width : 100%;
+	font-size : 30px;
+	margin : 20px 20px;
+}
+div#onsemiro_su_ex2 p#p2{
+	color : gray;
+	margin : 20px 20px;
+}
+div#onsemiro_su_ex2 span#span1{
+	color : brown;
+}
+
+div.branchImg#img3{
+	margin : -70px 0px 0px 100px;
+	width : 800px;
+	height : 550px;
+	float : left;
+}
+div.branchImg img#img3{
+	width : 800px;
+	height : 500px;
+}
+div.branchImg#img4{
+	float : left;
+	margin : 20px auto;
+}
+div.branchImg img#img4{
+	width : 500px;
+	height : 350px;
+	margin : 20px 50px 20px 100px;
+}
+
+div.branchImg#img5{
+	margin : 20px auto;
+}
+div.branchImg img#img5{
+	width : 500px;
+	height : 350px;
+	margin : 40px 50px 20px 50px;
+}
+div.branchImg#img6{
+	text-align : center;
+	margin : 20px auto;
+}
+div.branchImg img#img6{
+	width : 1100px;
+	height : 700px;
+}
+div.branchImg#img7{
+	text-align : center;
+	margin : 20px auto;
+}
+div.branchImg img#img7{
+	width : 1100px;
+	height : 700px;
+}
+
+
