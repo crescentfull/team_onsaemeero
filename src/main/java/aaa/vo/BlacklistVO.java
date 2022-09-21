@@ -1,7 +1,7 @@
 package aaa.vo;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+//import java.util.Date;
 
 import org.apache.ibatis.type.Alias;
 

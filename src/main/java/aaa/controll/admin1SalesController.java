@@ -1,7 +1,7 @@
 package aaa.controll;
 
-import java.security.KeyStore.Entry;
-import java.text.ParseException;
+//import java.security.KeyStore.Entry;
+//import java.text.ParseException;
 
 import java.util.*;
 
@@ -11,13 +11,13 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import aaa.db.salesMapp;
 import aaa.time.Ymd;
 import aaa.vo.BranchVo;
-import aaa.vo.ReservationVO;
+//import aaa.vo.ReservationVO;
 import aaa.vo.UserVo;
 
 @Controller

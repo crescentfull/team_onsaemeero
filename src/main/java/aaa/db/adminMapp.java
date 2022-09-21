@@ -3,7 +3,7 @@ package aaa.db;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.type.Alias;
+//import org.apache.ibatis.type.Alias;
 
 import aaa.vo.BlacklistVO;
 import aaa.vo.UserVo;

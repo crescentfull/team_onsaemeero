@@ -5,7 +5,7 @@ import java.util.HashMap;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.annotations.Param;
+//import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +16,7 @@ import aaa.db.bchMapp;
 import aaa.vo.RoomOptionVO;
 import aaa.vo.RoomVO;
 import aaa.vo.UserVo;
-import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
+//import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
 
 @Controller
 public class admin1BranchController {

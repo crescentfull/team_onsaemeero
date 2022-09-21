@@ -1,11 +1,11 @@
 package aaa.db;
 
-import java.util.HashMap;
+//import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import aaa.vo.ReservationVO;
+//import aaa.vo.ReservationVO;
 import aaa.vo.RoomOptionVO;
 import aaa.vo.RoomVO;
 

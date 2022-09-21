@@ -275,7 +275,7 @@ div#roof img{
 	
 	
 	<div class="list2" id="video">
-		<iframe width="900" height="506" src="https://www.youtube.com/embed/OO4g3UG4mtQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+		<iframe width="900" height="506" src="https://www.youtube.com/embed/OO4g3UG4mtQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 	</div>
 	</div>
 			

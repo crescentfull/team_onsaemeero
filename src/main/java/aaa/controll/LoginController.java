@@ -911,7 +911,7 @@ public class LoginController {
 	public Map getMessagesFrom(String roomId, int from) {
 		
 		List<ChatingVo> messages = chatService.getMessagesFrom(roomId, from);
-		
+
 		Map rs = new HashMap<>();
 		
 		rs.put("resultCode", "S-1");
