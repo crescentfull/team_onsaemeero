@@ -18,6 +18,7 @@
 - **Back-End** : Java, Springboot, MySQL
 
 ## 🗜 데이터베이스 Diagram
+<img width="703" alt="image" src="https://user-images.githubusercontent.com/78721108/201856865-816141d7-4ed2-40fb-b9b3-42df49d3d244.png">
 
 ## 💻 구현 기능
 ### BACKEND
@@ -39,6 +40,5 @@
 - 장바구니 상품 추가, 수정, 삭제 API
 
 ## ❗ Reference
-- 이 프로젝트는 [**SPAO**](http://spao.com/) 사이트를 참조하여 학습목적으로 만들었습니다.
-- 실무 수준의 프로젝트이지만 학습용으로 만들었기 때문에 이 코드를 활용하여 이득을 취하거나 무단 배포할 경우 법적으로 문제가 될 수 있습니다.
+- 이 코드를 활용하여 이득을 취하거나 무단 배포할 경우 법적으로 문제가 될 수 있습니다.
 
