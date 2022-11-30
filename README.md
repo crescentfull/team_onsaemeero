@@ -15,7 +15,7 @@
  
 ## ⚙ 적용 기술
 - **Front-End** : HTML5, CSS3, jqeury, jsp
-- **Back-End** : Java, Springboot, MySQL
+- **Back-End** : JavaScript, Java, Springboot, MySQL, Mybatis, maven, tomcat
 
 ## 데이터베이스 Diagram
 <img width="703" alt="image" src="https://user-images.githubusercontent.com/78721108/201856865-816141d7-4ed2-40fb-b9b3-42df49d3d244.png">
