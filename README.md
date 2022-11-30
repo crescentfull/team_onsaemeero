@@ -8,6 +8,11 @@
 - 팀원들 각자의 기술에 익숙해지는 것을 목표로 하여, 페이지 단위로 개발.
 - 기획 의도 : 
 
+## 온새미로 PROJECT PDF
+<a href="https://yeongroksong-proj.notion.site/UMODA-e7994b1acdf64b9e8b5366bea1bb3975"><img width="1195" alt="image" src="https://user-images.githubusercontent.com/78721108/204834169-c7ba85b0-6428-4a23-9aa0-2862008aadf7.png"></a>
+
+
+https://yeongroksong-proj.notion.site/UMODA-e7994b1acdf64b9e8b5366bea1bb3975
 ## 📅 개발 기간 및 개발 인원
 - 개발 기간 : 2021-06-28 ~ 2021-08-02 (공휴일 포함)
 - 개발 인원 <br/>
